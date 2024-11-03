@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable Dashboard</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
+    <!-- Your custom CSS -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Data Table Dashboard</h2>
+        <table id="dashboardTable" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample data rows will be populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+    <!-- Your custom script -->
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            $('#dashboardTable').DataTable({
+                // Add your DataTable options here
+            });
+
+            // Populate sample data (you can replace this with your data)
+            var data = [
+                ["John Doe", "john@example.com", "Admin", "<button>Edit</button>"],
+                ["Jane Smith", "jane@example.com", "User", "<button>Edit</button>"],
+                // Add more rows as needed
+            ];
+
+            // Add data to DataTable
+            $('#dashboardTable').DataTable().rows.add(data).draw();
+        });
+    </script>
+</body>
+
+</html>
